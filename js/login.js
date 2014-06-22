@@ -33,9 +33,11 @@ window.location.href = "profile.html";
    
      window.localStorage["auth_token"] = auth_token;
     
-    window.location = "profile.html";
+    window.location.href= "profile.html";
      },
-     error: function(jqXHR, textStatus, errorThrown) { alert(textStatus+" "+errorThrown); }
+     error: function(jqXHR, textStatus, errorThrown) { alert(textStatus+" "+errorThrown);
+     window.location.href = "index.html"	; 
+     }
   });
   });
 });
