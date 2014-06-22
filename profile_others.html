@@ -172,10 +172,10 @@ return false;
 <li id="mainmenu"><img src="images/nav_icon.png">
 <ul id="menu" style="list-style-type:none; padding:0; display:none; border-style:groove; border-radius:5px; height:auto;; background-color:#fff;">
 <li style="font-size:18px; "><img src="images/a.png" width="20%" height="20%" style=" vertical-align:middle;"><a href="#" style="text-decoration:none; vertical-align:middle;">Home</a></li>
-<li style="font-size:18px; "><hr><img src="images/b.jpg" width="20%" height="20%" style=" vertical-align:middle;"><a href="#" style="text-decoration:none; vertical-align:middle;">My Profile</a></li>
+<li style="font-size:18px; "><hr><img src="images/b.jpg" width="20%" height="20%" style=" vertical-align:middle;"><a href="#" style="text-decoration:none; vertical-align:middle;">Edit Profile</a></li>
 <li onclick="test()" style="font-size:18px; "><hr><img src="images/c.png" width="20%" height="20%" style=" vertical-align:middle;"><a href="#" style="text-decoration:none; vertical-align:middle;">Test Paper</a></li>
 <li style="font-size:18px;"><hr><img src="images/d.png" width="20%" height="20%" style=" vertical-align:middle;"><a href="#" style="text-decoration:none; vertical-align:middle;">My Stats</a></li>
-<li style="font-size:18px;"><hr><img src="images/e.jpg" width="20%" height="20%" style=" vertical-align:middle;"><a href="#" style="text-decoration:none; vertical-align:middle;">My Connections</a></li>
+<li onclick="logout()" style="font-size:18px;"><hr><img src="images/e.png" width="20%" height="20%" style=" vertical-align:middle;"><a href="#" style="text-decoration:none; vertical-align:middle;">Log Out</a></li>
 </ul>
 </li>
 </ul>
@@ -186,6 +186,14 @@ function test() {
     window.location.href = "index1.html";
 }
 
+</script>
+<script>
+function logout()
+{
+//window.localStorage.remove();
+window.localStorage. clear() ;
+window.location.href = "index.html";
+}
 </script>
   
     <br><br><br><br>
@@ -224,7 +232,7 @@ function test() {
 	
 
 
-	<table style="width:100%;margin-top:-15%">
+	<table style="width:100%;margin-top:-5%">
   <tr>
     <th style="width:50px;height:50px"><div id="photo" style="margin-left:5%"></div></th>		
   <th id="name" style="margin-top:0%"></th>
@@ -238,7 +246,7 @@ function test() {
 	
 <div id="write"></div>
 <div id="loading"></div>
-<div id="follo"></div>
+<div id="follo" visibility: hidden></div>
 <div id="follow1"><a href="#" class="follow" id="" ><br><span class="follow_b"> Follow </span><br><br></a></div>
 <div id="remove1" style="display:none"><span class="youfollowing_b"> You are Following </span><a href="#" class="remove" id="1"><span class="remove_b"> unfollow </span></a><br><br></div>
   
@@ -454,7 +462,7 @@ $(document).ready(function() {
 			//$('#awards').append('<p>  ' + jd.user.doc_award_and_publication+ '</p>');
 			
 			 
-             $("<img height='100px' width='100px'></img>").attr("src", jd.user.avatar_url).appendTo("#photo");
+             $("<img height='100px' width='100px' border='1'></img>").attr("src", jd.user.avatar_url).appendTo("#photo");
           });
    //   });
    });
